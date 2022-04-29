@@ -1,0 +1,57 @@
+package outer;
+class outer
+{
+	int outer_x;
+	inner i1;
+	outer()
+	{
+		System.out.println("outer class constructor called");
+		outer_x=10;
+		i1=new inner();
+	}
+	outer(int p,int q)
+	{
+		outer_x=p;
+		i1=new inner(q);
+	}
+	void show()
+	{
+		i1.disp();
+		System.out.println("i2 inner_y");
+	}
+	class inner
+	{
+		int inner_y;
+		inner()
+		{
+			inner_y=20;
+			System.out.println("inner class constructor called");
+			
+		}
+		inner(int p)
+		{
+			inner_y=p;
+		}
+		void disp()
+		{
+			System.out.println("outer_x"+"inner_y"+"inner_y");
+		
+		}
+	}	
+}
+	public class divya
+	{
+		public static void main(String[ ]args)
+		{
+			outer o1=new outer ();
+			outer o2=new outer(1,2);
+	
+	System.out.println("object 1");
+	o1.show();
+	System.out.println("object 2");
+	o2.show();
+	
+		}
+	}
+
+
